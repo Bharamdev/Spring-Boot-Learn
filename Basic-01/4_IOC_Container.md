@@ -41,7 +41,7 @@ it (e.g., injected into a @RestController).
 
 # Application Context:
 
-# Spring has two container interfaces:
+**Spring has two container interfaces:**
 * BeanFactory is the basic, older, lightweight container. It creates beans lazily (only when asked for).
 * ApplicationContext is built on top of BeanFactory and adds more features (event publishing, internationalization,
   annotation support). This is what you actually use in Spring Boot. It creates singleton beans eagerly at startup.
@@ -62,7 +62,7 @@ and starts Tomcat. You can even ask the container for a bean manually:
 StudentService service = context.getBean(StudentService.class);
 ```
 
-2. Reflection in JAVA
+**2. Reflection in JAVA**
 
 > Reflection is a Java feature that lets a program inspect and manipulate classes, methods, fields, constructors, and 
 annotations at runtime, without knowing them at compile time.
@@ -74,7 +74,7 @@ Object obj = clazz.getDeclaredConstructor().newInstance();       // create objec
 Read all methods
 Read all fields
 
-# Two things worth knowing:
+**Two things worth knowing:**
 
 * Reflection is slower than normal code, which is one reason Spring does most of this work once at startup and not 
   on every request.
@@ -82,7 +82,7 @@ Read all fields
   It's a framework-level tool.
 
 
-# When you run your app:
+**When you run your app:**
 
 > SpringApplication.run() creates the IoC container (ApplicationContext)
   @ComponentScan (inside @SpringBootApplication) tells it which packages to search

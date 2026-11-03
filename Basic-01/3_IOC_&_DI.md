@@ -1,6 +1,6 @@
 # IOC (Inversion of Control)
 
-# The problem first: tightly coupled code
+**The problem first: tightly coupled code**
 Say you're writing a StudentService class that needs to save data to a database. 
 Without any framework, you might write:
 
@@ -14,7 +14,7 @@ private MySQLStudentRepository repository;
 }
 ```
 
-# What's wrong with this? 
+**What's wrong with this?**
 StudentService itself is creating its own dependency (MySQLStudentRepository) using new. This means:
 
 * StudentService is tightly coupled to MySQLStudentRepository specifically. If tomorrow you switch to PostgreSQL and 
@@ -26,7 +26,7 @@ StudentService itself is creating its own dependency (MySQLStudentRepository) us
 
 # Solution:
 
-# Inversion of Control (IoC) — the principle
+**Inversion of Control (IoC) — the principle**
 IoC is an idea/principle, not a specific mechanism. It says: 
 "Don't let a class control the creation of its own dependencies. Hand that responsibility to something external."
 
@@ -34,7 +34,7 @@ Normally, your code is in control — it decides when to create objects, in what
 (that's the "normal" flow of control). IoC flips this: control is inverted — taken away from your individual classes 
 and given to an external entity (a framework/container) that manages object creation and wiring on your behalf.
 
-# Dependency Injection (DI) — the mechanism that implements IoC
+**Dependency Injection (DI) — the mechanism that implements IoC**
 If IoC is the principle ("don't create your own dependencies"), DI is the actual technique/mechanism used to achieve 
 it — specifically for supplying dependencies.
 
@@ -62,12 +62,12 @@ StudentService service = new StudentService(repo); // manually injecting
 ```
 That's manual DI — better than the tightly-coupled version, but you're still doing the wiring yourself.
 
-# Spring automates this entirely. Spring maintains something called the ApplicationContext
+**Spring automates this entirely. Spring maintains something called the ApplicationContext**
     (also referred to as the IoC container) — this is the "external entity" from our IoC definition.
 
 # Types of Dependency Injection
 
-a) Constructor Injection
+**a) Constructor Injection**
 ```java
 @Service
 public class StudentService {
@@ -79,7 +79,7 @@ public class StudentService {
     }
 }
 ```
-# I. Constructor Injection
+**I. Constructor Injection**
 
 ```java
 @Service
@@ -93,7 +93,7 @@ public class StudentService {
 }
 ```
 
-# II. Setter Injection
+**II. Setter Injection**
 
 ```java
 @Service
@@ -110,7 +110,7 @@ public class StudentService {
 
 Spring first creates the object with the default constructor, then calls the setter.
 
-# III. Field Injection
+**III. Field Injection**
 
 ```java
 @Service

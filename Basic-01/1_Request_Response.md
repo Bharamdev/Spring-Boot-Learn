@@ -1,5 +1,5 @@
-**1. Request-Response format
-**Request = what the client sends to the server. It has: **
+**1. Request-Response format**
+**Request = what the client sends to the server. It has:**
 
 - **URL** — the address, e.g. http://localhost:8088/students
 - **HTTP Method** — what you want to do: GET (fetch data), POST (create data), PUT/PATCH (update data), DELETE (remove data)
@@ -34,10 +34,10 @@
 
 **3. localhost:8088 — IP address and port
 
-**IP address — "which computer?"  
+**IP address — "which computer?"** 
 **Port — "which program on that computer?"**
 
-**4. Tomcat server  
+**4. Tomcat server**
 Tomcat is one actual, real, downloadable piece of software that implements that Servlet and Servlet Container concept  
 it embeds Tomcat directly inside your application. When you build your project, Tomcat's code gets bundled right into your runnable .jar file. So when you just run your main() method:
 

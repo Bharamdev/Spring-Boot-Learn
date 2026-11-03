@@ -3,7 +3,7 @@
 > An annotation (@Something) is metadata: a label you attach to a class, method, or field. By itself it does nothing. 
 It becomes useful because something else reads it. Here, Spring reads it and acts on it.
 
-1. @Component
+**1. @Component**
 Placed on a class, it tells Spring: "**Create an object of this class and manage it as a bean.**"
 
 ```java
@@ -13,12 +13,12 @@ public void send(String msg) { ... }
 }
 ```
 
-@Component	-> Any generic bean
+**@Component	-> Any generic bean
 @Service	-> Business logic layer
 @Repository	-> Database access layer (also adds automatic translation of database exceptions)
-@Controller / @RestController -> Web layer (handles HTTP requests)
+@Controller / @RestController -> Web layer (handles HTTP requests)**
 
-2. @Configuration
+**2. @Configuration**
 Placed on a class, it says: "**This class contains instructions on how to create beans.**" 
 Inside it you write methods annotated with @Bean, and whatever each method returns becomes a bean.
 
@@ -33,7 +33,7 @@ public class AppConfig {
 }
 ```
 
-3. @ComponentScan
+**3. @ComponentScan**
 Having @Component on a class isn't enough by itself. Spring must find it. @ComponentScan tells Spring which 
 packages to search for annotated classes.
 ```java
@@ -52,7 +52,7 @@ On your main class you write only @SpringBootApplication, but it's actually a bu
 @EnableAutoConfiguration makes Spring Boot automatically configure things based on the dependencies it sees (e.g., it sees spring-boot-starter-web and auto-configures Tomcat)
 @ComponentScan with no arguments scans the package of the main class and everything below it
 
-4. @Autowired 
+**4. @Autowired**
 @Autowired tells Spring: "Find a bean of the matching type in the container and inject it here."
 
 ```java
@@ -101,6 +101,6 @@ It builds from the bottom up: DataSource first, then the repository, then the se
 > Circular dependencies (A needs B, B needs A) break this graph, because neither can be built first. With 
   constructor injection, Spring Boot refuses to start and throws BeanCurrentlyInCreationException. Fix it by redesigning.
 
-# What happens when no matching bean exists
+**What happens when no matching bean exists**
 If Spring finds zero beans of the required type, startup fails.
 
