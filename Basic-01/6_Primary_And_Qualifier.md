@@ -1,7 +1,7 @@
 # What happens when multiple beans of the same type exist
 
 Say you have:
-```aiignore
+```java
 public interface PaymentService { void pay(); }
 
 @Service
@@ -11,9 +11,10 @@ public class CardPaymentService implements PaymentService { ... }
 public class UpiPaymentService implements PaymentService { ... }
 ```
 and:
-```aiignore
+```java
 @Service
 public class OrderService {
     public OrderService(PaymentService paymentService) { ... }
 }
 ```
+
